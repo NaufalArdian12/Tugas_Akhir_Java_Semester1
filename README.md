@@ -1,7 +1,10 @@
 //# Tugas_Akhir_Java_Semester1
 
 
-![Logo](https://spmb.polinema.ac.id/devel/asset/images/polinema_logo.png)
+
+![Logo](https://akupintar.id/documents/20143/0/LOGO+POLITEKNIK+NEGERI+MALANG.png/949b5c7d-1fd2-121d-c1ad-f275911cb955?version=1.0&t=1519104037264&imagePreview=1)
+
+
 
 
 # Project Expedition SIB-1G
