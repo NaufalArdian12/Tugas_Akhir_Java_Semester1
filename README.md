@@ -13,8 +13,8 @@
 
 # Project Expedition SIB-1G
 
-Dirancang dan dikembangkan oleh Kelompok 1  
-yang terdiri dari:
+Designed and developed by Group 1
+consisting of:
 
 1. FAKHIRA ZAHRANY NARDIN_20 | 2341760172
 
@@ -46,7 +46,12 @@ yang terdiri dari:
 
 ## Flowchart 
 
-Coming soon
+![Flowchart](https://github.com/NaufalArdian12/Tugas_Akhir_Java_Semester1/assets/80895732/3ca4bc1d-76d7-4b09-8baf-24d3b871ac0c)
+
+## Source Code
+
+![Source code](https://github.com/NaufalArdian12/Tugas_Akhir_Java_Semester1/assets/80895732/e2a12b8d-4fe1-43a4-ade8-f71e2a8d374b)
+
 
 
 
