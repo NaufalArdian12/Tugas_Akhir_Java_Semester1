@@ -5,10 +5,37 @@ public class CodinganKedua {
     public static void main(String[] args) {        
         Scanner scanner = new Scanner(System.in);
 
+            // Declaration Login
+            boolean signUp = false, login = false;
+            int option;
+            String name="Mitra", nameLogin , pass="Mitra123", passLogin, pass1, again; 
             // Declaration
             String expeditionName, startDate, endDate;
             String totalGoods;
             double totalDistance, rangeTime, totalTime, costPerTime, totalCost, costPerKilometer;
+
+            // Login And SignUp
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            System.out.println(" ----------------");
+            System.out.println("|    EXPEDITION   |");
+            System.out.println(" ----------------");
+            System.out.println("1. SignUp First if you dont have account");
+            System.out.println("2. Login If you Have an account Before");
+            option = scanner.nextInt();
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        switch (option) {
+            case 1 :
+                do{
+                    
+                }
+                break;
+        
+            default:
+                break;
+        }
+
 
             // Input
             System.out.println("Welcome to the Expedition Java Application!");
