@@ -1,14 +1,19 @@
 import java.util.Scanner;
-
+import java.util.Arrays;
 
 public class CodinganKedua {
     public static void main(String[] args) {        
         Scanner scanner = new Scanner(System.in);
 
             // Declaration Login
-            boolean signUp = false, login = false;
-            int option;
-            String name="Mitra", nameLogin , pass="Mitra123", passLogin, pass1, again; 
+            int usign = 3, psign = 3;
+            String[] Log = { "Necha", "Rizqi", "Rio" };
+            String[] pass = { "test", "pasti", "bisa" };
+            boolean signUp = false, login = false, menuLog = true, menu = true, lagi = true;
+            String namaLog = "", passLog, date = "", again, namaSignup, passSignup = "", passSignup1;
+            int option, repreat = 0,  user = -1;
+            // boolean signUp = false, login = false;
+            // String name="Mitra", nameLogin , pass="Mitra123", passLogin, pass1, again; 
             // Declaration
             String expeditionName, startDate, endDate;
             String totalGoods;
@@ -17,24 +22,110 @@ public class CodinganKedua {
             // Login And SignUp
             System.out.print("\033[H\033[2J");
             System.out.flush();
-            System.out.println(" ----------------");
+            System.out.println(" ---------||-------");
             System.out.println("|    EXPEDITION   |");
-            System.out.println(" ----------------");
+            System.out.println(" ---------||-------");
             System.out.println("1. SignUp First if you dont have account");
             System.out.println("2. Login If you Have an account Before");
             option = scanner.nextInt();
             System.out.print("\033[H\033[2J");
             System.out.flush();
-        switch (option) {
-            case 1 :
-                do{
-                    
+            switch (option) {
+                case 1:
+                    do {
+                        signUp = false;
+                        System.out.println(" ---------||-------");
+                        System.out.println("|    Sign Up      |");
+                        System.out.println(" ---------||-------");
+                        System.out.print("Apply the username : ");
+                        namaSignup = scanner.next();
+                        if (namaSignup.length() < 3) {
+                            System.out.println("Minimum 3 text ");
+                            continue;
+                        }
+                        for (int i = 0; i < usign; i++) {
+                            if (namaSignup.equals(Log[i])) {
+                                repreat = i;
+                                System.out.println("Username has loged in on another account");
+                                break;
+                            }
+                        }
+                        if (namaSignup.equals(Log[repreat])) {
+                            continue;
+                        }
+                        System.out.print("Type password  : ");
+                        passSignup1 = scanner.next();
+                        System.out.print("Repeat password : ");
+                        passSignup = scanner.next();
+                        if (passSignup.equals(passSignup1)) {
+                            signUp = true;
+                            System.out.print("\033[H\033[2J");
+                            break;
+                        } else {
+                            System.out.print("\033[H\033[2J");
+                            System.out.println("The password is not syncron !!!");
+                        }
+                    } while (signUp != true); {
+                    String[] newNama = new String[usign + 1];
+                    usign++;
+                    for (int i = 0; i < Log.length; i++) {
+                        newNama[i] = Log[i];
+                    }
+                    Log = newNama;
+                    String[] newPass = new String[psign + 1];
+                    psign++;
+                    for (int i = 0; i < pass.length; i++) {
+                        newPass[i] = pass[i];
+                    }
+                    pass = newPass;
+                    Log[usign - 1] = namaSignup;
+                    pass[psign - 1] = passSignup;
+                    System.out.print("\033[H\033[2J");
+                    System.out.println("Your account has been succes registered ");
                 }
-                break;
+                case 2:
+                    do {
+                        login = false;
+                        user = -1;
+                        System.out.println(" ---------||-------");
+                        System.out.println("|     Login      |");
+                        System.out.println(" ---------||-------");
+                        System.out.print("Input username : ");
+                        namaLog = scanner.next();
+                        for (int i = 0; i < Log.length; i++) {
+                            if (namaLog.equals(Log[i])) {
+                                user = i;
+                                break;
+                            }
+                        }
+                        System.out.print("Input Password : ");
+                        passLog = scanner.next();
+                        if (user == -1) {
+                            System.out.print("\033[H\033[2J");
+                            System.out.println("wrong username or password ");
+                            continue;
+                        }
+                        if (passLog.equals(pass[user])) {
+                            login = true;
+                        } else {
+                            System.out.print("\033[H\033[2J");
+                            System.out.println("wrong username or password");
+                        }
+                    } while (login != true);
+                    System.out.print("\033[H\033[2J");
+                    break;
+                case 3:
+                    menuLog = false;
+                    break;
+                default:
+                    System.out.print("\033[H\033[2J");
+
+                    System.out.println("UPSSS!!!");
+                    break;
+            }
         
-            default:
-                break;
-        }
+
+        
 
 
             // Input
@@ -104,9 +195,9 @@ public class CodinganKedua {
             System.out.println("2. View additional information");
             System.out.println("3. Exit");
 
-            int option = scanner.nextInt();
+            int option1 = scanner.nextInt();
 
-            switch (option) {
+            switch (option1) {
                 case 1:
                     System.out.println("\nExpedition Details:");
                     System.out.println("Name: " + expeditionName);
