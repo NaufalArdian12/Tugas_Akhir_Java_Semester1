@@ -57,7 +57,7 @@ public class CodinganKedua {
                         "Kamis", "jum'at", "Sabtu", "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "jum'at", "Sabtu",
                         "Minggu", "Rabu", "Kamis", "jum'at", "Sabtu", "Minggu", "Senin", "Selasa", "Rabu", "Kamis" }
         };
-        String[][] dateKabisat = {
+            String[][] dateKabisat = {
                 { "Senin", "Selasa", "Rabu", "Kamis", "jum'at", "Sabtu", "Minggu", "Senin", "Selasa", "Rabu", "Kamis",
                         "jum'at", "Sabtu", "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "jum'at", "Sabtu", "Minggu",
                         "Senin", "Selasa", "Rabu", "Kamis", "jum'at", "Sabtu", "Minggu", "Senin", "Selasa", "Rabu" },
@@ -96,6 +96,11 @@ public class CodinganKedua {
                         "Sabtu", "Minggu", "Rabu", "Kamis", "jum'at", "Sabtu", "Minggu", "Senin", "Selasa", "Rabu" }
         };
 
+            //Array Kota dan harga
+            String[][] perkiraan = {{"Surabaya","Malang"},{"Malang", "Surabaya"}, {"Malang","Jakarta",},{"Jakarta", "Malang"}, 
+                                    {"Surabaya", "Jakarta"}, {"Jakarta", "Surabaya"}, {"Malang, Pasuruan"}, {"Pasuruan", "Malang"},
+                                    {"Surabaya", "Pasuruan"}, {"Pasuruan", "Surabaya"}, {}};
+            // int[] perkiraanharga = {{  }};
             //untuk Input
             String expeditionName = "" ;
             String totalGoods = "" ;
@@ -301,7 +306,7 @@ public class CodinganKedua {
 
                         // Output
                         System.out.println("\nExpedition Details:");
-                        System.out.println("Name: " + expeditionName);
+                        System.out.println("Name: " + expeditionName.equalsIgnoreCase(expeditionName));
                         System.out.println("Start Date: " + startDate);
                         System.out.println("End Date: " + endDate);
                         System.out.println("Total Distance (km): " + totalDistance);
