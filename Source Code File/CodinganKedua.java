@@ -117,6 +117,7 @@ public class CodinganKedua {
         String formattedDate = "";
         String expeditionName = "";
         String inputDate = "";
+        String anything = "";
         int totalGoods = 0, weight = 0, day = 0;
         int startDate = 0, endDate = 0;
         double totalDistance = 0.0, rangeTime = 0.0, distanceCost = 0.0;
