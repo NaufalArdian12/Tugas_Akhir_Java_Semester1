@@ -413,6 +413,9 @@ public class CodinganKedua {
         } while (menuLog != true);
 
         scanner.close();
+
+
+        //PUSH
         // Dibatasi array kota
         // CODINGAN AWAL
         // // Input
