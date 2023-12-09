@@ -7,7 +7,7 @@
 <!-- <h3 align="left">Languages and Tools:</h3> -->
 <!-- <p align="left"> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> </p> -->
 
-![Logo](https://akupintar.id/documents/20143/0/LOGO+POLITEKNIK+NEGERI+MALANG.png/949b5c7d-1fd2-121d-c1ad-f275911cb955?version=1.0&t=1519104037264&imagePreview=1)
+![Logo](https://psdkukediri.polinema.ac.id/wp-content/uploads/2020/06/LOGO-POLINEMA-transparent-3.png)
 
 ## Biodate Group
 
@@ -31,7 +31,7 @@ consisting of:
 
 - [@NaufalArdian12](https://github.com/NaufalArdian12)
 - [@safrizalrahman46](https://github.com/safrizalrahman46)
-- [@zahrany28](https://github.com/zahrany28)
+- [@Vhirazhr](https://github.com/Vhirazhr)
 
 
 ## Technology implementation
@@ -40,7 +40,7 @@ consisting of:
 
 **Framework:** Visual Studio Code
 
-## Pseudocode
+<!-- ## Pseudocode
 
 ![flowchart](https://github.com/NaufalArdian12/Tugas_Akhir_Java_Semester1/assets/80895732/a7dc9c45-58ab-4747-8b5a-c962a0db14d4)
 
@@ -50,7 +50,7 @@ consisting of:
 
 ## Source Code
 
-![Source code](https://github.com/NaufalArdian12/Tugas_Akhir_Java_Semester1/assets/80895732/e2a12b8d-4fe1-43a4-ade8-f71e2a8d374b)
+![Source code](https://github.com/NaufalArdian12/Tugas_Akhir_Java_Semester1/assets/80895732/e2a12b8d-4fe1-43a4-ade8-f71e2a8d374b) -->
 
 
 
