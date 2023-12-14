@@ -2,6 +2,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Expedition {
 
@@ -15,6 +16,7 @@ public class Expedition {
     static String namaLog = "", passLog, date = "", again, namaSignup, passSignup = "", passSignup1;
     static int option, repreat = 0, user = -1;
     static int userChoice;
+    static int int_random = ThreadLocalRandom.current().nextInt();  
 
     // Array Kota dan harga
     static String[][] perkiraan = {
@@ -46,11 +48,13 @@ public class Expedition {
     static int startDate = 0, endDate = 0;
     static double totalDistance = 0.0, rangeTime = 0.0, distanceCost = 0.0;
     static double costPerTime = 0.0, totalCost = 0.0, costPerKilometer = 0.0;
+    static String paymentType = "";
+
 
     static void SignUp() {
-        System.out.println("|========================================|");
-        System.out.println("                Sign Up                   ");
-        System.out.println("|========================================|");
+        System.out.println("|================================================================================|");
+        System.out.println("                                    Sign Up                                       ");
+        System.out.println("|================================================================================|");
         System.out.printf("Apply the username : ");
         namaSignup = scanner.next();
         if (namaSignup.length() < 3) {
@@ -250,28 +254,29 @@ public class Expedition {
         System.out.println("weight of good: " + weight);
         System.out.println("Total Goods: " + totalGoods);
         System.out.println("Total Cost: " + totalCost);
-        System.out.println("|=========================================| ");
-        System.out.println("|              Payment                      |");
-        System.out.println("|=========================================| ");
+        System.out.println("|================================================================================| ");
+        System.out.println("|                                       Payment                                  |");
+        System.out.println("|================================================================================| ");
 
         System.out.print("Payment type (Direct / COD) : ");
-        String paymentType = scanner.nextLine();
+        
+        paymentType = scanner.nextLine();
         Double paymentAmount = 0.0;
         Double remain = 0.0;
 
         if(paymentType.contains("COD")) {
-            System.out.println("|=========================================| ");
-            System.out.println("|              Payment : Not yet paid off |");
-            System.out.println("|=========================================| ");
+            System.out.println("|================================================================================| ");
+            System.out.println("|                            Payment : Not yet paid off                          |");
+            System.out.println("|================================================================================| ");
         } else {
             System.out.print("Payment amount : ");
             paymentAmount = scanner.nextDouble();
             remain = paymentAmount - totalCost;
-            System.out.println("|=========================================| ");
-            System.out.println("|              Payment : Paid off         |");
-            System.out.println("|                                         |");
-            System.out.println("|              Remain fee : Rp. "+remain+"|");
-            System.out.println("|=========================================| ");
+            System.out.println("|================================================================================| ");
+            System.out.println("|                                   Payment : Paid off                           |");
+            System.out.println("|                                                                                |");
+            System.out.println("  |                             Remain fee : Rp. "+remain+"                        |");
+            System.out.println("|================================================================================| ");
 
         }
         
@@ -285,25 +290,27 @@ public class Expedition {
     }
 
     static void Recieve(){
-        
-        System.out.println("|=========================================| ");
-        System.out.println("|  Resi : Express"+getAlphaNumericString(7)+  "|");
-        System.out.println("|=========================================| ");
-        System.out.println("Sender Name: " + expeditionName);
-        System.out.println("Cost Distance: " + distanceCost);
-        System.out.println("weight of good: " + weight);
-        System.out.println("Total Goods: " + totalGoods);
-        System.out.println("Total Cost: " + totalCost);
-        System.out.println("|=========================================| ");
-        System.out.println("Recipient Name: " + recipientName);
-        System.out.println("From: " + fromWhere);
-        System.out.println("To: " + toWhere);
-        System.out.println("|=========================================| ");
-        // System.out.println(                    paymentType = "");
-        String paymentType = scanner.nextLine();
-        System.out.println("|     Shipment Type : "+paymentType+     "|");
-        System.out.println("|=========================================| ");
+        // paymentType = scanner.nextLine();
 
+        System.out.println("|================================================================================| ");
+        System.out.println("                        Resi : Express"+getAlphaNumericString(7)+int_random         );
+        System.out.println("|================================================================================| ");
+        System.out.println("                            Sender Name: " + expeditionName);
+        System.out.println("                            Cost Distance: " + distanceCost);
+        System.out.println("                            Weight of good: " + weight);
+        System.out.println("                            Total Goods: " + totalGoods);
+        System.out.println("                            Total Cost: " + totalCost);
+        System.out.println("|================================================================================| ");
+        System.out.println("                             Recipient Name: " + recipientName);
+        System.out.println("                                 From: " + fromWhere                                    );
+        System.out.println("                                   To: " + toWhere                                         );
+        System.out.println("|================================================================================| ");
+        // System.out.println(                    paymentType = "");
+        
+        System.out.println("|                         Shipment Type : "+paymentType+"                        |");
+        System.out.println("|================================================================================| ");
+        anything = scanner.nextLine();
+        MainMenu();
     }
     static String getAlphaNumericString(int n) 
     { 
@@ -336,7 +343,7 @@ public class Expedition {
 
     static void Additional() {
         System.out.println("\nAdditional Information:");
-        if (totalDistance > 1000) {
+        if (totalDistance > 300) {
             System.out.println("This is a long expedition!");
         } else {
             System.out.println("This is a short expedition.");
@@ -359,17 +366,17 @@ public class Expedition {
     }
 
     static void MainMenu() {
-        System.out.println("|=========================================|");
-        System.out.println("|              Logged In Menu             |");
-        System.out.println("|=========================================|");
-        System.out.println("|           1. Go to Option Menu          |");
-        System.out.println("|           2. Change Password            |");
-        System.out.println("|           3. View Account Info          |");
-        System.out.println("|           4. Detail & Payment           |");
-        System.out.println("|           5. View additional information|");
-        System.out.println("|           6. Print Recieve              |");
-        System.out.println("|           6. Logout                     |");
-        System.out.println("|=========================================| ");
+        System.out.println("|================================================================================|");
+        System.out.println("|                                  Logged In Menu                                |");
+        System.out.println("|================================================================================|");
+        System.out.println("|                              1. Input Menu                                     |");
+        System.out.println("|                              2. Change Password                                |");
+        System.out.println("|                              3. View Account Info                              |");
+        System.out.println("|                              4. Detail & Payment                               |");
+        System.out.println("|                              5. View additional information                    |");
+        System.out.println("|                              6. Print Recieve                                  |");
+        System.out.println("|                              7. Logout                                         |");
+        System.out.println("|================================================================================| ");
         System.out.printf("Choose an option: ");
         userChoice = scanner.nextInt();
         scanner.nextLine();
@@ -408,13 +415,18 @@ public class Expedition {
     }
 
     static void Run() {
-        System.out.println("|========================================|");
-        System.out.println("                                           ");
-        System.out.println("               EXPEDITION                ");
-        System.out.println("                                           ");
-        System.out.println("|========================================|");
-        System.out.println("1. SignUp First if you dont have account");
-        System.out.println("2. Login If you Have an account Before");
+        System.out.println("|================================================================================|");
+        System.out.println("                                  G1-EXPEDITION                                   ");
+        System.out.println("|================================================================================|");
+        System.out.println("                                                                                    ");
+        System.out.println("                    1. SignUp First if you dont have account                       ");
+        System.out.println("                    2. Login If you Have an account Before                         ");
+        System.out.println("                                                                                    ");
+        System.out.println("|================================================================================|");
+        System.out.println("                        Jl. Soekarno Hatta No.9, Jatimulyo,                           ");
+        System.out.println("                  Kec. Lowokwaru, Kota Malang, Jawa Timur 65141                   ");
+        System.out.println("|================================================================================|");
+        System.out.println("                                Choose Option 1 / 2:                                 ");
         option = scanner.nextInt();
         ClearScreen();
         switch (option) {
