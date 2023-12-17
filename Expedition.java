@@ -17,7 +17,11 @@ public class Expedition {
     static int option, repreat = 0, user = -1;
     static int userChoice;
     static int int_random = ThreadLocalRandom.current().nextInt();  
-
+    static ServiceType serviceType;
+    enum ServiceType {
+    REGULAR,
+    ECONOMIC
+}
     // Array Kota dan harga
     static String[][] perkiraan = {
             { "Surabaya", "Malang", "100", "12000" },
@@ -27,11 +31,26 @@ public class Expedition {
             { "Malang", "Jakarta", "850", "21000" },
             { "Malang, Pasuruan", "75", "10000" },
             { "Jakarta", "Malang", "850", "21000" },
-            { "Jakarta", "Surabaya", "780", "14000" },
             { "Jakarta", "Pasuruan", "820", "22000" },
             { "Pasuruan", "Malang", "75", "10000" },
             { "Pasuruan", "Surabaya", "70", "10000" },
-            { "Pasuruan", "Jakarta", "820", "22000" },
+            //Utama Fitur 
+            //jakarta
+            { "Jakarta", "Surabaya", "780", "14000" },
+            { "Surabaya", "Jakarta", "780", "14000" },
+            { "Jakarta", "Semarang", "448", "35000" },
+            { "Semarang", "Jakarta", "448", "35000" },
+            { "Jakarta", "Bandung", "157", "24000" },
+            { "Bandung", "Jakarta", "157", "24000" },
+            //Bandung
+            { "Bandung", "Semarang", "365", "25000" },
+            { "Semarang", "Bandung", "365", "25000" },
+            { "Bandung", "Surabaya", "705", "41000" },
+            { "Surabaya", "Bandung", "705", "41000" },
+            //semarang
+            { "Surabaya", "Semarang", "350", "26000" },
+            { "Semarang", "Surabaya", "350", "26000" },
+
     };
     // int[] perkiraanharga = {{ }};
     // untuk Input
@@ -99,9 +118,9 @@ public class Expedition {
 
     static void Login() {
         user = -1;
-        System.out.println(" |========================================|");
-        System.out.println("|                   Login                 |");
-        System.out.println(" |========================================|");
+        System.out.println(" |================================================================================|");
+        System.out.println("|                                    Login                                       |");
+        System.out.println(" ================================================================================|");
         System.out.printf("Input username : ");
         namaLog = scanner.next();
         for (int i = 0; i < Log.length; i++) {
@@ -127,6 +146,8 @@ public class Expedition {
     }
 
     static void MenuInput() {
+        System.out.println("Services: " + serviceType);
+        
         System.out.println("Welcome to the Expedition Java Application!");
         System.out.print("Please enter the sender name: ");
         expeditionName = scanner.nextLine();
@@ -146,6 +167,8 @@ public class Expedition {
         System.out.println("|=========================================| ");
         System.out.println("Malang");
         System.out.println("Surabaya");
+        System.out.println("Semarang");
+        System.out.println("Bandung");
         System.out.println("Jakarta");
         System.out.println("Pasuruan");
         System.out.println("|=========================================| ");
@@ -157,6 +180,8 @@ public class Expedition {
         System.out.println("|=========================================| ");
         System.out.println("Malang");
         System.out.println("Surabaya");
+        System.out.println("Semarang");
+        System.out.println("Bandung");
         System.out.println("Jakarta");
         System.out.println("Pasuruan");
         System.out.println("|=========================================| ");
@@ -254,6 +279,7 @@ public class Expedition {
         System.out.println("weight of good: " + weight);
         System.out.println("Total Goods: " + totalGoods);
         System.out.println("Total Cost: " + totalCost);
+        System.out.println("Services: " + serviceType);
         System.out.println("|================================================================================| ");
         System.out.println("|                                       Payment                                  |");
         System.out.println("|================================================================================| ");
@@ -306,7 +332,7 @@ public class Expedition {
         System.out.println("                                   To: " + toWhere                                         );
         System.out.println("|================================================================================| ");
         // System.out.println(                    paymentType = "");
-        
+        System.out.println("Services: " + serviceType);
         System.out.println("|                         Shipment Type : "+paymentType+"                        |");
         System.out.println("|================================================================================| ");
         anything = scanner.nextLine();
@@ -376,6 +402,7 @@ public class Expedition {
         System.out.println("|                              5. View additional information                    |");
         System.out.println("|                              6. Print Recieve                                  |");
         System.out.println("|                              7. Logout                                         |");
+        System.out.println("|                              8.  Select Service Type (Regular/Economic)                                       |");
         System.out.println("|================================================================================| ");
         System.out.printf("Choose an option: ");
         userChoice = scanner.nextInt();
@@ -402,11 +429,41 @@ public class Expedition {
                 Recieve();
             case 7:
                 Run();
+            case 8:
+                ClearScreen();
+                selectServiceType();
             default:
                 ClearScreen();
                 System.out.println("Wrong input");
                 MainMenu();
         }
+    }
+    
+    static void selectServiceType() {
+        System.out.println("|================================================================================|");
+        System.out.println("|                            Select Service Type                                |");
+        System.out.println("|================================================================================|");
+        System.out.println("|                              1. Regular Service                                |");
+        System.out.println("|                              2. Economic Service                               |");
+        System.out.println("|================================================================================| ");
+        System.out.printf("Choose a service type: ");
+        int serviceChoice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (serviceChoice) {
+            case 1:
+                serviceType = ServiceType.REGULAR;
+                break;
+            case 2:
+                serviceType = ServiceType.ECONOMIC;
+                break;
+            default:
+                System.out.println("Wrong input");
+                selectServiceType();
+        }
+
+        ClearScreen();
+        MainMenu();
     }
 
     static void ClearScreen() {
