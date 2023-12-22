@@ -6,8 +6,11 @@
 
 <!-- <h3 align="left">Languages and Tools:</h3> -->
 <!-- <p align="left"> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> </p> -->
+# Saya Safrizal Dan teman teman Pamit undur diri dari repositori Ini terimakasih Bu Vivi Atas Ilmunya ©Group 1 Expedition
 
-![Logo](https://psdkukediri.polinema.ac.id/wp-content/uploads/2020/06/LOGO-POLINEMA-transparent-3.png)
+
+
+![Logo](https://personalitydevelopmentandetiquette.files.wordpress.com/2015/11/thanks.png)
 
 ## Biodate Group
 
