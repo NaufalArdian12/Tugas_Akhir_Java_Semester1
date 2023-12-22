@@ -71,5 +71,7 @@ public class CodinganUtama {
         }
 
         System.out.println("\nThank you for using the Expedition Java Application!");
+        System.out.println("\nThank you for using the Expedition Java Application!");
+
     }
 }
